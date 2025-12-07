@@ -1,0 +1,285 @@
+/* Italian Meatballs Recipe Stylesheet */
+
+/* Import Google Fonts - Italian-inspired elegant fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap");
+
+/* CSS Variables for consistent theming */
+:root {
+  --primary-red: #c41e3a;
+  --secondary-green: #009246;
+  --cream: #f5f1e8;
+  --dark-brown: #3e2723;
+  --light-tan: #d7ccc8;
+  --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Global Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: var(--cream);
+  color: var(--dark-brown);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header Styling */
+header {
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-red) 0%, #8b1a2e 100%);
+  color: var(--white);
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow);
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header h1 u {
+  text-decoration: none;
+  border-bottom: 3px solid var(--white);
+  padding-bottom: 5px;
+}
+
+/* Recipe Image Container */
+.recipe-image {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.recipe-image img {
+  border-radius: 12px;
+  box-shadow: 0 6px 20px var(--shadow);
+  border: 5px solid var(--white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(196, 30, 58, 0.3);
+}
+
+/* Main Container for Recipe Content */
+#recipe-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 35px;
+  padding: 25px;
+  background-color: var(--cream);
+  border-radius: 8px;
+  border-left: 5px solid var(--primary-red);
+  transition: transform 0.2s ease;
+}
+
+section:hover {
+  transform: translateX(5px);
+}
+
+section h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: var(--primary-red);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--light-tan);
+  padding-bottom: 10px;
+}
+
+/* Description Section */
+.description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.description em {
+  color: var(--secondary-green);
+  font-style: italic;
+}
+
+.description strong {
+  color: var(--primary-red);
+  font-weight: 700;
+}
+
+.description mark {
+  background-color: #ffe0b2;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Recipe Details - Definition List */
+.recipe-details dl {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 15px 20px;
+  align-items: center;
+}
+
+.recipe-details dt {
+  font-weight: 700;
+  color: var(--primary-red);
+  font-size: 1.1rem;
+}
+
+.recipe-details dd {
+  background-color: var(--white);
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid var(--light-tan);
+}
+
+/* Ingredients List */
+.ingredients-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ingredients-section ul li {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  background-color: var(--white);
+  border-left: 4px solid var(--secondary-green);
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ingredients-section ul li:hover {
+  background-color: #e8f5e9;
+  transform: translateX(8px);
+}
+
+.ingredients-section ul li::before {
+  content: "✓ ";
+  color: var(--secondary-green);
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* Instructions List */
+.instructions-section ol {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+}
+
+.instructions-section ol li {
+  counter-increment: step-counter;
+  padding: 20px;
+  margin-bottom: 15px;
+  background-color: var(--white);
+  border-radius: 8px;
+  border: 2px solid var(--light-tan);
+  position: relative;
+  padding-left: 70px;
+  transition: box-shadow 0.3s ease;
+}
+
+.instructions-section ol li:hover {
+  box-shadow: 0 4px 15px rgba(196, 30, 58, 0.2);
+}
+
+.instructions-section ol li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  background: linear-gradient(135deg, var(--primary-red), #8b1a2e);
+  color: var(--white);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+/* Notes Article */
+article {
+  background: linear-gradient(135deg, #fff3e0 0%, var(--cream) 100%);
+  padding: 25px;
+  border-radius: 8px;
+  border: 2px dashed var(--primary-red);
+  margin-top: 30px;
+}
+
+article h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: var(--primary-red);
+  margin-bottom: 12px;
+}
+
+article p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+article a {
+  color: var(--primary-red);
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease, color 0.3s ease;
+}
+
+article a:hover {
+  color: var(--secondary-green);
+  border-bottom: 2px solid var(--secondary-green);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  #recipe-container {
+    padding: 25px;
+  }
+
+  .recipe-details dl {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .recipe-details dt {
+    background-color: var(--light-tan);
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
+
+  .instructions-section ol li {
+    padding-left: 20px;
+  }
+
+  .instructions-section ol li::before {
+    position: static;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
